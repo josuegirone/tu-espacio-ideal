@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos - FHA</title>
+
+  <!-- Enlace a Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <style>
+    /* Estilo personalizado para los contenedores de tarjetas */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .project-title {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      margin-top: -30px;
+    }
+
+    .icon-container i {
+      font-size: 40px;
+      color: #0d6efd;
+      background-color: white;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TU ESPACIO IDEAL</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+      /* Estilos adicionales */
+      .top-bar {
+        background-color: rgba(248, 249, 250, 0.9);
+        padding: 10px 0;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        margin-top: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #198754;
+      }
+
+      .navbar-brand img {
+        max-height: 40px;
+      }
+
+      .navbar-nav .nav-link {
+        font-weight: bold;
+        color: white !important;
+        margin-left: 5px;
+      }
+
+      .social-icons a {
+        font-size: 1.5rem;
+        color: #0d6efd;
+        margin-left: 10px;
+      }
+
+      .navbar .bi-arrow-left-circle {
+  font-size: 1.2em; /* Ajusta el tamaño del icono */
+  margin-left: 8px;
+}
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Header Top Bar -->
+    <div class="top-bar">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="contact-info">
+          <strong>Contáctenos:</strong>
+          <span>Tel. <a href="tel:+50259403306">+50259403306</a></span> -
+          <span>Cel. <a href="https://wa.me/50235159161" target="_blank">
+            +50235159161 <i class="bi bi-whatsapp"></i></a>
+          </span>
+        </div>
+        <div class="social-icons">
+          <strong>Síguenos:</strong>
+          <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.x.com" target="_blank"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="/assets/imagenn.jpeg" alt="Logo" class="me-2" />
+          <span class="text-white fw-bold">TU ESPACIO IDEAL</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a [routerLink]="['/home']" class="nav-link text-white">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/services-list']" class="nav-link text-white">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/home']" class="nav-link text-white">Salir</a>
+            </li>
+            <!-- Botón para regresar a la página anterior -->
+            <li class="nav-item">
+              <a href="javascript:void(0);" onclick="window.history.back();" class="nav-link text-white">
+                <i class="bi bi-arrow-left-circle"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+  </html>
+
+
+<!-- Título -->
+<div class="container">
+  <h1 class="project-title text-center mb-4">PROPIEDADES EN RENTA</h1>
+
+  <div class="row">
+    <div class="col-md-3 mb-4 d-flex justify-content-center" *ngFor="let item of items">
+      <div class="card shadow-sm" style="width: 100%; max-width: 280px;">
+        <img [src]="item.image" class="card-img-top" alt="{{ item.name }}">
+        <div class="card-body text-center">
+          <div class="icon-container mb-2">
+            <i class="bi bi-building"></i>
+          </div>
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">
+            {{ item.address }}<br>
+            {{ item.categoria }}<br>
+            <strong>Precio:</strong> Q {{ item.price }}
+          </p>
+          <a [routerLink]="['/cotizadordos', item.price]" class="btn btn-outline-primary w-100 mb-2">
+            Cotizar →
+          </a>
+
+          <a [routerLink]="['/agendarvisita-service']" [queryParams]="{
+            address: item.address,
+            id: item.id,
+            image: item.image,
+            name: item.name,
+            price: item.price,
+            categoria: item.categoria
+          }" class="btn btn-success btn-sm w-100">
+            Agendar visita
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Enlace a Bootstrap JS y Bootstrap Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+</body>
+</html>

@@ -1,0 +1,26 @@
+.top-bar {
+  font-size: 0.9rem;
+}
+
+.social-icons a {
+  color: #000;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.navbar-brand span {
+  font-size: 1.5rem;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .top-bar {
+    font-size: 0.8rem;
+  }
+}

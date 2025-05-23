@@ -1,0 +1,127 @@
+<div class="container service-container mt-5">
+  <div class="row">
+    <!-- Sección informativa y resumen de propiedad -->
+    <div class="col-md-6 description-section">
+      <h2>Agendar visita a propiedad</h2>
+
+      <!-- Mostrar información de propiedad -->
+      <div *ngIf="selectedProperty" class="alert alert-info">
+        <strong>Propiedad seleccionada:</strong><br />
+        🏠 {{ selectedProperty.name }} <br />
+        📍 {{ selectedProperty.address }} <br />
+        💰 Precio: Q {{ selectedProperty.price }}
+      </div>
+
+      <div class="contact-info">
+        <h4>¿Necesitas ayuda?</h4>
+        <p>Contáctanos al <a href="tel:+50235159161">+50235159161</a></p>
+        <img src="assets/Visita.jpg" alt="Propiedad" class="img-fluid contact-img" />
+      </div>
+    </div>
+
+    <!-- Formulario de agendamiento -->
+    <div class="col-md-6">
+      <div class="form-container p-4">
+        <h4>Formulario de Agendamiento</h4>
+
+        <form (ngSubmit)="submitForm()" #form="ngForm">
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico *</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              [(ngModel)]="formData.email"
+              name="email"
+              required
+              #email="ngModel"
+            />
+            <div *ngIf="email.invalid && email.touched" class="text-danger">Campo requerido</div>
+          </div>
+
+          <!-- Nombre y Apellido -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">Nombre *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                [(ngModel)]="formData.firstName"
+                name="firstName"
+                required
+                #firstName="ngModel"
+              />
+              <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">Campo requerido</div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Apellido *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                [(ngModel)]="formData.lastName"
+                name="lastName"
+                required
+                #lastName="ngModel"
+              />
+              <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">Campo requerido</div>
+            </div>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Teléfono *</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              [(ngModel)]="formData.phone"
+              name="phone"
+              required
+              #phone="ngModel"
+            />
+            <div *ngIf="phone.invalid && phone.touched" class="text-danger">Campo requerido</div>
+          </div>
+
+          <!-- Fecha de visita -->
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Fecha de visita *</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="formData.visitDate"
+              [matDatepickerFilter]="filterDates"
+              name="visitDate"
+              required
+              #visitDate="ngModel"
+            />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker [dateClass]="dateClass"></mat-datepicker>
+          </mat-form-field>
+          <div *ngIf="visitDate.invalid && visitDate.touched" class="text-danger">Campo requerido</div>
+
+          <!-- Mensaje -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje o requerimientos *</label>
+            <textarea
+              class="form-control"
+              id="message"
+              [(ngModel)]="formData.message"
+              name="message"
+              rows="4"
+              required
+              #message="ngModel"
+            ></textarea>
+            <div *ngIf="message.invalid && message.touched" class="text-danger">Campo requerido</div>
+          </div>
+
+          <!-- Botón de envío -->
+          <button type="submit" class="btn btn-submit" [disabled]="form.invalid">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

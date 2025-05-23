@@ -1,0 +1,79 @@
+/* crear-nuevo-administrador.component.css */
+.form-container {
+  background-color: #378f5c; /* Bright green background for an eye-catching look */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.navbar {
+  background-color: #27ae60; /* Darker green for navbar */
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-control {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+}
+
+.form-control:focus {
+  border-color: #2980b9;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: scale(1.1); /* Button grows when hovered */
+}
+
+.white-text {
+  color: white;
+}
+
+.navbar-image {
+  filter: blur(4px);
+}
+
+.top-bar {
+  background-color: #27ae60;
+  padding: 15px 0;
+}
+
+.contact-info {
+  color: white;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 15px;
+}
+
+.social-icons a:hover {
+  color: #2980b9;
+}

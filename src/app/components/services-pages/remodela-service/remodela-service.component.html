@@ -1,0 +1,108 @@
+<!-- fotografia-profesional.component.html -->
+<div class="top-bar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info">
+      <strong>Contáctenos:</strong>
+      <span>Tel. <a href="tel:+50259403306">+50259403306</a></span> -
+      <span>Cel. <a href="https://wa.me/50235159161" target="_blank">
+        +50235159161 <i class="bi bi-whatsapp"></i></a>
+      </span>
+    </div>
+    <div class="social-icons">
+      <strong>Síguenos:</strong>
+      <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.x.com" target="_blank"><i class="bi bi-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="/assets/imagenn.jpeg" alt="Logo" class="me-2" />
+      <span class="text-white fw-bold">TU ESPACIO IDEAL</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/home']" class="nav-link text-white">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/services-list']" class="nav-link text-white">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/cotizador']" class="nav-link text-white">Cotizar</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/login']" class="nav-link text-white">Ingresar</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="window.history.back();" class="nav-link text-white">
+            <i class="bi bi-arrow-left-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sección de servicio de fotografía -->
+<div class="container service-container mt-5">
+  <div class="row">
+    <div class="col-md-6 description-section">
+      <h2>Servicio de Remodelación Profesional</h2>
+      <p>Ofrecemos un servicio integral de remodelación de casas, diseñado para transformar cada espacio según sus necesidades y estilo. Nos encargamos de renovar, modernizar y optimizar su hogar con materiales de calidad, asesoría personalizada y un equipo profesional que cuida cada detalle del proceso.
+
+      </p>
+      <div class="contact-info">
+        <h4>¿Interesado en nuestros servicios?</h4>
+        <p>Llámemos al <a href="tel:+50235159161">+502351591661</a></p>
+        <img src="assets/remodela.jpg" alt="Fotografía de propiedad" class="img-fluid contact-img">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-container p-4">
+        <h4>Contáctenos para más detalles</h4>
+        <form (ngSubmit)="submitRemodelaForm()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico *</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="formData.email" name="email" required>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">Nombre *</label>
+              <input type="text" class="form-control" id="firstName" [(ngModel)]="formData.firstName" name="firstName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Apellido *</label>
+              <input type="text" class="form-control" id="lastName" [(ngModel)]="formData.lastName" name="lastName" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Teléfono *</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="formData.phone" name="phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje o necesidades *</label>
+            <textarea class="form-control" id="message" [(ngModel)]="formData.message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

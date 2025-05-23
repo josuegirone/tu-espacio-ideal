@@ -1,0 +1,71 @@
+/* registro.component.css */
+.form-container {
+  background-image: url('/assets/wall.jpg'); /* Ruta de tu imagen */
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+  background-position: center; /* Centra la imagen */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  background-color: #198754;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+h2 {
+  color: #145a32;
+}
+
+.form-label {
+  font-weight: bold;
+  color: white
+}
+
+
+.form-control {
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}
+
+.navbar-image {
+  filter: blur(500px); /* Ajusta el valor para mayor o menor desenfoque */
+}
+
+.white-text {
+  color: white;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.icon-container i {
+  font-size: 40px;
+  color: #0d6efd;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  margin-left: 10px;
+}

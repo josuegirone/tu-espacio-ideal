@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Cuotas </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #208b59;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+    .form-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+    .footer {
+      background-color: #208b59;
+      color: white;
+      padding: 40px 0;
+      margin-top: 30px;
+    }
+    .footer form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#">
+      <img src="assets/imagenn.jpeg" alt="Logo de Casa" height="40">
+      Encuentra tu espacio ideal para rentar
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link">REGRESAR</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="window.history.back();" class="nav-link text-white">
+            <i class="bi bi-arrow-left-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2 class="text-center my-4">Calculadora de Renta Mensual</h2>
+
+  <div class="row form-section">
+    <!-- Formulario de Datos -->
+    <div class="col-md-6">
+      <h4>Ingrese los datos solicitados:</h4>
+      <form (ngSubmit)="calcularRenta()">
+
+
+     <!-- Precio mensual de renta (bloqueado) -->
+<div class="mb-3">
+  <label for="precioRenta" class="form-label">* Precio mensual de renta (Q):</label>
+  <input type="number" class="form-control" id="precioRenta"
+         [(ngModel)]="precioRenta" name="precioRenta"
+         placeholder="Ej. 2500" required readonly>
+</div>
+
+<!-- Depósito de garantía (bloqueado) -->
+<div class="mb-3">
+  <label for="deposito" class="form-label">* Depósito de garantía (Q):</label>
+  <input type="number" class="form-control" id="deposito"
+         [(ngModel)]="deposito" name="deposito"
+         placeholder="Ej. 2500" >
+</div>
+
+
+
+        <div class="mb-3">
+          <label for="duracion" class="form-label">* Duración del contrato (meses):</label>
+          <input type="number" class="form-control" id="duracion" [(ngModel)]="duracion" name="duracion" required>
+        </div>
+        <div class="mb-3">
+          <label for="tipoPropiedad" class="form-label">Tipo de propiedad:</label>
+          <select class="form-select" id="tipoPropiedad" [(ngModel)]="tipoPropiedad" name="tipoPropiedad">
+            <option value="Apartamento">Apartamento</option>
+            <option value="Casa">Casa</option>
+            <option value="Oficina">Oficina</option>
+            <option value="Local Comercial">Local Comercial</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Calcular Renta Total</button>
+        <button type="button" class="btn btn-secondary w-100 mt-2" (click)="limpiarCampos()">Limpiar Campos</button>
+        <button class="btn btn-success w-100 mt-2" (click)="generarPDF()">Descargar PDF</button>
+      </form>
+    </div>
+
+    <!-- Resultados del Cálculo -->
+    <div class="col-md-6">
+      <h4>Resultados:</h4>
+      <div class="mb-3">
+        <label for="totalContrato" class="form-label">Costo total del contrato (Q):</label>
+        <input type="number" class="form-control" id="totalContrato" [value]="totalContrato" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="servicios" class="form-label">Estimación de servicios y mantenimiento mensual (Q):</label>
+        <input type="number" class="form-control" id="servicios" [value]="serviciosEstimados" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="rentaMensualFinal" class="form-label">Total mensual aproximado (Q):</label>
+        <input type="number" class="form-control" id="rentaMensualFinal" [value]="rentaMensualFinal" disabled>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer text-center">
+  <div class="container">
+    <h4>¡Todo empieza con encontrar tu espacio ideal!</h4>
+    <p>1 Av 9-00 Zona 17 SEDE PORTALES UMG</p>
+    <p>PBX: 2420 - 2420</p>
+  </div>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

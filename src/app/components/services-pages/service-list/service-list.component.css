@@ -1,0 +1,144 @@
+.container {
+  max-width: 800px;
+  margin-top: 50px;
+}
+
+.list-group-item {
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #e8f5e9; /* Verde claro */
+  cursor: pointer;
+}
+
+.service-title {
+  font-weight: bold;
+  color: #1b5e20; /* Verde oscuro */
+}
+
+.btn-read-more {
+  margin-top: 10px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+  background-color: #2e7d32;
+}
+
+/* Ajustar la imagen para un mejor espaciado */
+.service-img {
+  width: 850px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 50px;
+  border-radius: 5px;
+}
+
+/* Asegurar el espaciado adecuado entre los elementos */
+.list-group-item {
+  margin-bottom: 20px;
+}
+
+.btn-read-more {
+  background-color: #28a745; /* Ajustar color si lo necesitas */
+  color: white;
+}
+
+/* NUEVO */
+
+/* Fondo de la página en verde menta */
+body {
+  background-color: #82b986; /* Verde menta suave */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Fondo de las tarjetas en blanco para que contrasten con el fondo verde menta */
+.service-item {
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto de hover en las tarjetas */
+.service-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #198754; /* Verde más oscuro para los títulos */
+  font-weight: bold;
+}
+
+.service-img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-read-more {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.btn-read-more:hover {
+  background-color: #145A32; /* Color más oscuro al pasar el cursor */
+}
+
+.image-container {
+  margin-right: 20px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4A4A4A; /* Color de texto más suave */
+}
+
+h2 {
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(4, 3, 3, 0.2);
+  color: #ff5733; /* Cambia el color si lo prefieres más vibrante */
+}
+
+.btn-custom-green {
+  background-color: #145A32; /* Verde oscuro personalizado */
+  color: white; /* Texto en blanco */
+  border: none;
+}
+
+.btn-custom-green:hover {
+  background-color: #0E4724; /* Un verde más oscuro para el hover */
+}
+
+.back-button {
+  margin-left: 8px;
+  color: #333; /* Cambia el color según tu diseño */
+  text-decoration: none;
+}
+
+.back-button:hover {
+  color: #555; /* Color en hover */
+}
+
+
+

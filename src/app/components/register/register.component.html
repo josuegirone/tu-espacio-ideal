@@ -1,0 +1,93 @@
+
+<div class="top-bar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info">
+      <strong>Contáctenos:</strong>
+      <span>Tel. <a href="tel:+50259403306">+50259403306</a></span> -
+      <span>Cel. <a href="https://wa.me/50235159161" target="_blank">
+        +50235159161 <i class="bi bi-whatsapp"></i></a>
+      </span>
+    </div>
+    <div class="social-icons">
+      <strong>Síguenos:</strong>
+      <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.x.com" target="_blank"><i class="bi bi-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<head>
+  <!-- Enlace a Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#">
+      <img src="assets/imagenn.jpeg" alt="Logo de Casa" height="40" class="navbar-image" alt="Tu espacio ideal">
+      Cumple el sueño de tu casa propia
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/login']" class="nav-link">REGRESAR</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container form-container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">Registro de Nuevo Usuario</h2>
+      <form (ngSubmit)="submitForm()">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Nombre *</label>
+          <input type="text" class="form-control" id="firstName" [(ngModel)]="formData.firstName" name="firstName" required>
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Apellido *</label>
+          <input type="text" class="form-control" id="lastName" [(ngModel)]="formData.lastName" name="lastName" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico *</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="formData.email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Usuario *</label>
+          <input type="text" class="form-control" id="username" [(ngModel)]="formData.username" name="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña *</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="formData.password" name="password" required>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirmar Contraseña *</label>
+          <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="formData.confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <!-- Campo desplegable para Cliente o Administrador -->
+        <div class="mb-3">
+          <label for="userRole" class="form-label">Tipo de Usuario</label>
+          <select class="form-select" id="userRole" [(ngModel)]="formData.userRole" name="userRole" required>
+            <option value="Cliente">Cliente</option>
+          </select>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+      <p class="text-center mt-3 white-text">
+        ¿Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a>
+      </p>
+    </div>
+  </div>
+</div>
+

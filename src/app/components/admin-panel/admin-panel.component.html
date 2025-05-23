@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador - Agregar Propiedades</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #206e4a;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      background-color: #278157;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #f8f9fa;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+    .main-content {
+      margin-left: 260px;
+      padding: 20px;
+    }
+    .panel-header {
+      margin-bottom: 20px;
+    }
+    .property-form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .property-form input, .property-form textarea {
+      margin-bottom: 10px;
+    }
+    .image-upload {
+      margin-top: 10px;
+      padding: 10px;
+      border: 2px dashed #ced4da;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .image-upload input {
+      margin-top: 10px;
+    }
+    .property-form button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">
+        <img src="assets/imagenn.jpeg" alt="Logo de Casa" height="40"  alt="Tu espacio ideal" height="40">
+        Cumple el sueño de tu casa propia
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="btn btn-danger text-white" href="#" style="display: inline-flex; align-items: center;">
+              <i class="bi bi-box-arrow-right me-2"></i> SALIR
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h4 class="text-white text-center">Panel de Admin</h4>
+    <a href="#">Dashboard</a>
+    <a href="#">Agregar Propiedad</a>
+    <a href="#">Ver Propiedades</a>
+    <a href="#">Cotizador</a>
+    <a href="#">Salir</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <div class="panel-header">
+        <h2>Agregar Nueva Propiedad</h2>
+        <p>Complete la información para agregar una nueva propiedad en la plataforma.</p>
+      </div>
+
+      <!-- Property Form -->
+      <div class="property-form">
+        <form>
+          <div class="mb-3">
+            <label for="title" class="form-label">Título de la Propiedad</label>
+            <input type="text" class="form-control" id="title" placeholder="Ingrese el título de la propiedad" required>
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Ubicación</label>
+            <input type="text" class="form-control" id="location" placeholder="Ingrese la ubicación" required>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Precio (Q)</label>
+            <input type="number" class="form-control" id="price" placeholder="Ingrese el precio de la propiedad" required>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea class="form-control" id="description" rows="3" placeholder="Ingrese una descripción de la propiedad" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Link imagen 1</label>
+            <textarea class="form-control" id="description" rows="1" placeholder="Ingrese una descripción de la propiedad" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Link imagen 2</label>
+            <textarea class="form-control" id="description" rows="1" placeholder="Ingrese una descripción de la propiedad" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Link imagen 3</label>
+            <textarea class="form-control" id="description" rows="1" placeholder="Ingrese una descripción de la propiedad" required></textarea>
+          </div>
+          <!-- Image Upload -->
+          <div class="image-upload">
+            <label for="image" class="form-label">Subir Imágenes de la Propiedad</label>
+            <input type="file" class="form-control" id="image" multiple>
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-success w-100">Agregar Propiedad</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

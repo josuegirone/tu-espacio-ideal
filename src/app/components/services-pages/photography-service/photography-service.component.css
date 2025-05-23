@@ -1,0 +1,98 @@
+/* fotografia-profesional.component.css */
+.top-bar {
+  background-color: rgba(248, 249, 250, 0.9);
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #198754;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  color: white !important;
+  margin-left: 5px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  margin-left: 10px;
+}
+
+/* Estilos para la sección de servicios */
+.service-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 30px;
+}
+
+/* Estilos para la descripción del servicio */
+.description-section h2 {
+  color: #145A32;
+  font-weight: bold;
+}
+
+.description-section p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.contact-info h4 {
+  margin-top: 30px;
+  color: #145A32;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.contact-img {
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos para el formulario */
+.form-container {
+  background-color: #F8F9F9;
+  border: 1px solid #DFF5E1;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h4 {
+  color: #145A32;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Cuotas </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #198754;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+    .form-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+    .footer {
+      background-color: #208b59;
+      color: white;
+      padding: 40px 0;
+      margin-top: 30px;
+    }
+    .footer form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">
+        <img src="assets/imagenn.jpeg" alt="Logo de Casa" height="40"  alt="Tu espacio ideal" height="40">
+        Cumple el sueño de tu casa propia
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a [routerLink]="['/catalog']" class="nav-link" >REGRESAR </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0);" onclick="window.history.back();" class="nav-link text-white">
+              <i class="bi bi-arrow-left-circle"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <div class="container">
+    <h2 class="text-center my-4">Calculadora de Cuotas</h2>
+
+    <div class="row form-section">
+      <!-- Formulario de Datos -->
+      <div class="col-md-6">
+        <h4>Ingrese los datos solicitados:</h4>
+        <form (ngSubmit)="calcularCuotas()">
+          <div class="mb-3">
+            <label for="precioTotal" class="form-label">* Precio Total de la casa a comprar (Q):</label>
+            <input type="number" class="form-control" id="precioTotal" [(ngModel)]="precioTotal" name="precioTotal" placeholder="Ingrese el precio total" required>
+          </div>
+          <div class="mb-3">
+            <label for="enganche" class="form-label">* Valor del enganche (Q):</label>
+            <input type="number" class="form-control" id="enganche" [(ngModel)]="enganche" name="enganche" placeholder="Ingrese el valor del enganche" required>
+          </div>
+          <div class="mb-3">
+            <label for="interes" class="form-label">* Interés Entidad Financiera (%):</label>
+            <input type="number" class="form-control" id="interes" [(ngModel)]="interes" name="interes" required>
+          </div>
+          <div class="mb-3">
+            <label for="plazo" class="form-label">* Plazo de pago (años):</label>
+            <select class="form-select" id="plazo" [(ngModel)]="plazo" name="plazo">
+              <option value="5">5 años</option>
+              <option value="10">10 años</option>
+              <option value="15">15 años</option>
+              <option value="20">20 años</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Calcular Cuotas</button>
+          <button type="button" class="btn btn-secondary w-100 mt-2" (click)="limpiarCampos()">Limpiar Campos</button>
+          <button class="btn btn-success w-100 mt-2" (click)="generarPDF()">Descargar PDF</button>
+
+        </form>
+      </div>
+
+      <!-- Resultados del Cálculo -->
+      <div class="col-md-6">
+        <h4>Cálculo de cuotas:</h4>
+        <div class="mb-3">
+          <label for="montoFinanciar" class="form-label">Monto a financiar (Q):</label>
+          <input type="number" class="form-control" id="montoFinanciar" [value]="montoFinanciar" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="cuotaMensual" class="form-label">Cuota mensual nivelada (Q):</label>
+          <input type="number" class="form-control" id="cuotaMensual" [value]="cuotaMensual" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="iusi" class="form-label">IUSI (Q):</label>
+          <input type="number" class="form-control" id="iusi" [value]="iusi" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="seguroIncendio" class="form-label">Seguro de incendio (Q):</label>
+          <input type="number" class="form-control" id="seguroIncendio" [value]="seguroIncendio" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="totalCuota" class="form-label">Total de cuota mensual (Q):</label>
+          <input type="number" class="form-control" id="totalCuota" [value]="totalCuota" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Footer -->
+<div class="footer text-center">
+  <div class="container">
+    <h4>¡Todo empieza con un sueño!</h4>
+    <p>1 Av 9-00 Zona 17 SEDE PORTALES UMG</p>
+    <p>PBX: 2420 - 2420 </p>
+
+
+
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

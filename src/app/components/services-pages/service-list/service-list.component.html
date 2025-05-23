@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Espacio Ideal</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./service-list.component.css">
+
+  <style>
+    /* Estilos adicionales */
+    .top-bar {
+      background-color: rgba(248, 249, 250, 0.9);
+      padding: 10px 0;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 700;
+    }
+
+    nav {
+      margin-top: 0px;
+      box-shadow: 0 px 1px rgba(0, 0, 0, 0.1);
+      background-color: #198754;
+    }
+
+    .navbar-brand img {
+      max-height: 80px;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: bold;
+      color: white !important;
+      margin-left: 5px;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      color: #0d6efd;
+      margin-left: 10px;
+    }
+
+    .container h2 {
+      color: #198754;
+    }
+
+    .list-group-item {
+      margin-bottom: 20px;
+    }
+
+    .service-item {
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-img {
+      width: 500px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .btn-read-more {
+      background-color: #198754;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <div class="top-bar bg-light py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="contact-info">
+            <strong>Contáctenos:</strong>
+            <span>Tel. <a href="tel:+50259403306">+50259403306</a></span> -
+            <span>Cel. <a href="https://wa.me/50235159161" target="_blank">
+                +50235159161 <i class="bi bi-whatsapp"></i></a>
+            </span>
+        </div>
+        <div class="social-icons">
+            <strong>Síguenos:</strong>
+            <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.x.com" target="_blank"><i class="bi bi-twitter"></i></a>
+            <!-- Botón para regresar a la página anterior -->
+            <a href="javascript:void(0);" onclick="window.history.back();" class="back-button">
+                <i class="bi bi-arrow-left-circle"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Contenido de la página de Servicios -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="list-group">
+
+      <!-- Servicio de Administración de Rentas -->
+      <a class="list-group-item list-group-item-action service-item" href="#">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="image-container">
+            <img src="assets/rental-service.jpeg" alt="Servicio de Administración de Rentas" class="img-fluid service-img">
+          </div>
+          <div>
+            <h5 class="service-title">Servicio de Administración de Rentas</h5>
+            <p>Ideal para arrendatarios e inversionistas que deseen que sus propiedades sean manejadas por una empresa especializada. ¡Nosotros nos encargamos de todo el proceso!</p>
+            <a [routerLink]="['/rental-service']" class="btn btn-custom-green mt-3">Leer más</a>
+          </div>
+        </div>
+      </a>
+
+      <!-- Fotografía Profesional para Bienes Inmuebles -->
+      <a class="list-group-item list-group-item-action service-item" href="#">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="image-container">
+            <img src="assets/photography-service.jpg" alt="Fotografía Profesional para Bienes Inmuebles" class="img-fluid service-img">
+          </div>
+          <div>
+            <h5 class="service-title">Fotografía Profesional para Bienes Inmuebles</h5>
+            <p>En Bienes Raíces, la primera impresión es importante. Solo promovemos propiedades con fotografías de alta calidad para captar los mejores ángulos de cada propiedad.</p>
+            <a [routerLink]="['/photography-service']" class="btn btn-custom-green mt-3">Leer más</a>
+          </div>
+        </div>
+      </a>
+
+      <!-- Asesoría Legal y Fiscal -->
+      <a class="list-group-item list-group-item-action service-item" href="#">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="image-container">
+            <img src="assets/legal-service.jpg" alt="Servicios Legales" class="img-fluid service-img">
+          </div>
+          <div>
+            <h5 class="service-title">Asesoría Legal y Fiscal</h5>
+            <p>Nuestros asesores legales son expertos en Bienes Raíces y ofrecen toda la información necesaria para realizar su negocio con tranquilidad.</p>
+            <a [routerLink]="['/legal-service']" class="btn btn-custom-green mt-3">Leer más</a>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- Remodelaciones-->
+      <a class="list-group-item list-group-item-action service-item" href="#">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="image-container">
+            <img src="assets/remodela.jpg" alt="Servicios Legales" class="img-fluid service-img">
+          </div>
+          <div>
+            <h5 class="service-title">Remodelaciones </h5>
+            <p>Contamos con un equipo especializado en remodelaciones que le brinda toda la información y acompañamiento necesarios para que realice su proyecto con tranquilidad, seguridad y confianza.</p>
+            <a [routerLink]="['/remodela-service']" class="btn btn-custom-green mt-3">Leer más</a>
+          </div>
+        </div>
+      </a>
+
+
+      <!--
+<a class="list-group-item list-group-item-action service-item" href="#">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="image-container">
+      <img src="assets/Visita.jpg" alt="Servicios Legales" class="img-fluid service-img">
+    </div>
+    <div>
+      <h5 class="service-title">Agenda una visita </h5>
+      <p>Contamos con un equipo de confianza que te acompañará en todo el proceso. Agenda tu visita y conoce la propiedad que podría ser tu nuevo hogar.</p>
+      <a [routerLink]="['/agendarvisita-service']" class="btn btn-custom-green mt-3">Leer más</a>
+    </div>
+  </div>
+</a>
+-->
+
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

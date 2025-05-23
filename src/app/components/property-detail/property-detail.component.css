@@ -1,0 +1,101 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #145A32; /* Dark green background */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #f8f9fa;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #278157; /* Lighter green for hover effect */
+  color: white;
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.sidebar h4 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Form Container adjustments */
+.form-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;  /* Adjusted margin to move form more to the right */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #206e4a;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+/* Additional Form and Card styling */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.row {
+  margin-left: 100px;
+}
+
+.col-md-4 {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}

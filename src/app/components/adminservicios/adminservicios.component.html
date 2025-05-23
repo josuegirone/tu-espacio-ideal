@@ -1,0 +1,72 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #198754;">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#">
+      <img src="assets/imagenn.jpeg" alt="Tu espacio ideal" height="40" class="me-2">
+      Cumple el sueño de tu casa propia
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/catalog']" class="nav-link text-white fw-semibold">🏠 REGRESAR</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" (click)="goBack()" class="nav-link text-white">
+            <i class="bi bi-arrow-left-circle"></i> Atrás
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Filtro de categorías -->
+<div class="container mt-4 mb-3">
+  <div class="text-center">
+    <label class="fw-semibold me-2">Filtrar por categoría:</label>
+    <select [(ngModel)]="selectedCategory" class="form-select w-auto d-inline-block" (change)="filtrarServicios()">
+      <option value="all">Todos</option>
+      <option value="rentalServiceForms">🟢 Alquiler</option>
+      <option value="remodelaServiceForms">🟣 Remodelaciones</option>
+      <option value="photographyServiceForms">🔵 Fotografía</option>
+      <option value="legalServiceForms">⚖️ Asesoría Legal</option>
+    </select>
+  </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="container mt-2">
+  <h2 class="text-center mb-5 text-primary">📄 Solicitudes De Servicios Pendientes De Atender</h2>
+
+  <div *ngIf="items.length === 0" class="text-center text-muted">
+    <p>No hay solicitudes registradas por el momento.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4" *ngFor="let item of items; trackBy: trackByKey">
+      <div class="card shadow-sm border-success border-2">
+        <div class="card-body">
+          <h5 class="card-title text-center text-success fw-bold">{{ item.name }}</h5>
+          <p><i class="bi bi-envelope-fill text-primary"></i> <strong>Email:</strong> {{ item.email }}</p>
+          <p><i class="bi bi-telephone-fill text-success"></i> <strong>Teléfono:</strong> {{ item.phone }}</p>
+          <p><i class="bi bi-chat-left-dots-fill text-info"></i> <strong>Mensaje:</strong> {{ item.message }}</p>
+        </div>
+        <div class="card-footer text-center bg-light">
+          <a class="btn btn-outline-success btn-sm me-2"
+             [href]="generarLinkWhatsApp(item)" target="_blank">
+            <i class="bi bi-whatsapp"></i> Enviar info
+          </a>
+          <button class="btn btn-outline-danger btn-sm"
+                  (click)="marcarComoAtendido(item.id)">
+            <i class="bi bi-check2-circle"></i> Atendido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
