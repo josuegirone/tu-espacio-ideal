@@ -1,39 +1,38 @@
-<div class="menu-container">
-  <h2 class="menu-title">Bienvenido a Tu Espacio Ideal</h2>
-  <p class="menu-description">Selecciona una opción para comenzar</p>
+<div class="background-wrapper">
+  <div class="menu-container">
+    <h2 class="menu-title">Bienvenido a Tu Espacio Ideal</h2>
+    <p class="menu-description">Selecciona una opción para comenzar</p>
 
-  <div class="options">
-    <!-- Opción Comprar -->
-    <div class="option-card" (mouseover)="onMouseOver('comprar')" (mouseleave)="onMouseLeave('comprar')">
-      <div class="image-container">
-        <img src="assets/comprar.png" alt="Comprar" class="option-image" id="comprar-img"/>
+    <div class="options">
+      <div class="option-card" (mouseover)="onMouseOver('comprar')" (mouseleave)="onMouseLeave('comprar')">
+        <div class="image-frame square">
+          <img src="assets/comprar.png" alt="Comprar" class="option-image" id="comprar-img">
+        </div>
+        <h3>Comprar</h3>
+        <p>Encuentra la casa de tus sueños y hazla tuya.</p>
+        <button [routerLink]="['/catalog']" class="select-btn"><i class="fa-solid fa-house"></i> Seleccionar</button>
       </div>
-      <h3>Comprar</h3>
-      <p>Encuentra la casa de tus sueños y hazla tuya.</p>
-      <!-- Usando routerLink en un <a> -->
-      <a [routerLink]="'/catalog'" class="select-btn">Seleccionar</a>
-    </div>
 
-    <!-- Opción Rentar -->
-    <div class="option-card" (mouseover)="onMouseOver('rentar')" (mouseleave)="onMouseLeave('rentar')">
-      <div class="image-container">
-        <img src="assets/rentar.png" alt="Rentar" class="option-image" id="rentar-img"/>
+      <div class="option-card" (mouseover)="onMouseOver('rentar')" (mouseleave)="onMouseLeave('rentar')">
+        <div class="image-frame square">
+          <img src="assets/rentar.png" alt="Rentar" class="option-image" id="rentar-img">
+        </div>
+        <h3>Rentar</h3>
+        <p>Vive temporalmente en un lugar que te haga sentir como en casa.</p>
+        <button [routerLink]="['/renta']" class="select-btn"><i class="fa-solid fa-key"></i> Seleccionar</button>
       </div>
-      <h3>Rentar</h3>
-      <p>Vive temporalmente en un lugar que te haga sentir como en casa.</p>
-      <!-- Usando routerLink en un <a> -->
-      <a [routerLink]="'/renta'" class="select-btn">Seleccionar</a>
-    </div>
 
-    <!-- Opción Planear estadía corta -->
-    <div class="option-card" (mouseover)="onMouseOver('planear')" (mouseleave)="onMouseLeave('planear')">
-      <div class="image-container">
-        <img src="assets/planear.png" alt="Planear estadía corta" class="option-image" id="planear-img"/>
+      <div class="option-card" (mouseover)="onMouseOver('planear')" (mouseleave)="onMouseLeave('planear')">
+        <div class="image-frame square">
+          <img src="assets/planear.png" alt="Planear estadía corta" class="option-image" id="planear-img">
+        </div>
+        <h3>Planear estadía corta</h3>
+        <p>Encuentra la mejor opción para una estadía corta y cómoda.</p>
+        <button [routerLink]="['/estadia']" class="select-btn"><i class="fa-solid fa-calendar-days"></i> Seleccionar</button>
       </div>
-      <h3>Planear estadía corta</h3>
-      <p>Encuentra la mejor opción para una estadía corta y cómoda.</p>
-      <!-- Usando routerLink en un <a> -->
-      <a [routerLink]="'/estadia'" class="select-btn">Seleccionar</a>
     </div>
   </div>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
