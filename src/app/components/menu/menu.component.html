@@ -30,6 +30,26 @@
         <p>Encuentra la mejor opción para una estadía corta y cómoda.</p>
         <button [routerLink]="['/estadia']" class="select-btn"><i class="fa-solid fa-calendar-days"></i> Seleccionar</button>
       </div>
+
+      <div class="option-card" (mouseover)="onMouseOver('servicios')" (mouseleave)="onMouseLeave('servicios')">
+  <div class="image-frame square">
+    <img src="assets/imagenservicios.png" alt="Conoce Nuestros Servicios!" class="option-image" id="planear-img">
+  </div>
+  <h3>Conoce Nuestros Servicios!</h3>
+  <p>
+    📸 <strong>Fotografía profesional</strong>,<br>
+    ⚖️ <strong>Asesoría legal</strong>,<br>
+    🛠️ <strong>Remodelación y mejoras</strong>,<br>
+    🏠 <strong>Gestión de alquileres</strong>.<br>
+    ¡Todo en un solo lugar!
+  </p>
+  <button [routerLink]="['/services-list']" class="select-btn">
+    <i class="fa-solid fa-house"></i> Seleccionar
+  </button>
+</div>
+
+
+
     </div>
   </div>
 </div>
