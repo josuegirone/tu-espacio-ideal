@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tu Nuevo Hogar</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS e íconos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <!-- Estilos personalizados -->
   <style>
-    /* Hero Section */
     .hero {
-      background-image: url('assets/back.jpg');
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('assets/back.jpg') no-repeat center center;
       background-size: cover;
-      background-position: center;
       color: white;
       padding: 150px 0;
+      text-shadow: 1px 1px 5px #000;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       font-weight: bold;
     }
 
@@ -28,12 +27,10 @@
       font-size: 1.5rem;
     }
 
-    /* Propiedades Destacadas */
-    .properties h2 {
-      font-size: 2.5rem;
+    .btn-primary {
       font-weight: bold;
-      text-align: center;
-      margin-bottom: 2rem;
+      padding: 10px 25px;
+      font-size: 1.1rem;
     }
 
     .property-card {
@@ -70,39 +67,50 @@
       margin-bottom: 10px;
     }
 
-    .property-card .btn {
-      margin-top: auto;
-      margin-bottom: 1rem;
-    }
-
-    /* Beneficios */
-    .benefits h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-
-    .benefits .benefit-icon {
-      font-size: 3rem;
+    .benefit-icon {
+      font-size: 3.5rem;
       color: #198754;
-      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+      display: inline-block;
     }
 
-    .benefits h5 {
-      font-size: 1.25rem;
+    .benefit-title,
+    .benefit-desc {
+      transition: all 0.3s ease;
+    }
+
+    .benefit-block:hover .benefit-icon,
+    .benefit-card:hover .benefit-icon {
+      transform: scale(1.3) rotate(5deg);
+      animation: bounce 0.5s ease;
+    }
+
+    .benefit-block:hover .benefit-title,
+    .benefit-card:hover h5 {
+      transform: scale(1.1);
+      color: #0d6efd;
       font-weight: bold;
     }
 
-    .benefits p {
-      font-size: 1rem;
-      color: #555;
+    .benefit-block:hover .benefit-desc,
+    .benefit-card:hover p {
+      transform: translateY(-5px);
+      color: #444;
+    }
+
+    @keyframes bounce {
+      0%   { transform: scale(1.3) translateY(0); }
+      50%  { transform: scale(1.3) translateY(-5px); }
+      100% { transform: scale(1.3) translateY(0); }
     }
   </style>
 </head>
 
 <body>
+
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container text-center text-white">
+  <section class="hero text-center">
+    <div class="container">
       <h1>Encuentra tu hogar ideal</h1>
       <p>Propiedades para comprar o alquilar en las mejores ubicaciones</p>
       <a [routerLink]="['/login']" class="btn btn-primary mt-3">INGRESAR</a>
@@ -110,37 +118,37 @@
   </section>
 
   <!-- Propiedades Destacadas -->
-  <section id="properties" class="properties py-5">
+  <section class="py-5" style="background: linear-gradient(135deg, #f0fdf4, #ffffff);">
     <div class="container">
       <h2 class="text-center mb-5">Propiedades Destacadas</h2>
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="property-card">
-            <img src="assets/propiedad1.jpeg" class="img-fluid property-image" alt="Propiedad 1" />
-            <div class="property-info p-3">
+            <img src="assets/propiedad1.jpeg" alt="Propiedad 1" />
+            <div class="property-info">
               <h5 class="property-title">Casa en Zona 10</h5>
               <p>Q1,500,000</p>
-              <button class="btn btn-outline-primary" (click)="mostrarAlerta()">Cotizar</button>
+              <a class="btn btn-outline-primary" [routerLink]="['/login']">Cotizar</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="property-card">
-            <img src="assets/propiedad2.jpeg" class="img-fluid property-image" alt="Propiedad 2" />
-            <div class="property-info p-3">
+            <img src="assets/propiedad2.jpeg" alt="Propiedad 2" />
+            <div class="property-info">
               <h5 class="property-title">Apartamento en Zona 14</h5>
               <p>Q950,000</p>
-              <button class="btn btn-outline-primary" (click)="mostrarAlerta()">Cotizar</button>
+              <a class="btn btn-outline-primary" [routerLink]="['/login']">Cotizar</a>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="property-card">
-            <img src="assets/propiedad3.jpeg" class="img-fluid property-image" alt="Propiedad 3" />
-            <div class="property-info p-3">
+            <img src="assets/propiedad3.jpeg" alt="Propiedad 3" />
+            <div class="property-info">
               <h5 class="property-title">Casa en San Cristóbal</h5>
               <p>Q1,250,000</p>
-              <button class="btn btn-outline-primary" (click)="mostrarAlerta()">Cotizar</button>
+              <a class="btn btn-outline-primary" [routerLink]="['/login']">Cotizar</a>
             </div>
           </div>
         </div>
@@ -148,26 +156,60 @@
     </div>
   </section>
 
-  <!-- Beneficios -->
-  <section class="benefits py-5 bg-light">
+  <!-- Conócenos -->
+  <section class="py-5" style="background: linear-gradient(135deg, #e0f7fa, #ffffff);">
     <div class="container text-center">
-      <h2>Beneficios de Usar Nuestra Plataforma</h2>
-      <p class="lead">Confiabilidad, seguridad y la mejor opción para encontrar tu nuevo hogar</p>
-      <div class="row mt-4">
-        <div class="col-md-4">
+      <h2 class="mb-4">Conoce Más Sobre Nosotros</h2>
+      <p class="lead mb-5">
+        En <strong>Tu Nuevo Hogar</strong>, creemos que encontrar una propiedad no debería ser complicado.
+        Nuestra plataforma nació después de vivir una mala experiencia reservando en línea con demasiadas restricciones.
+        Creamos esta solución para facilitarte el proceso: rápida, segura y sin complicaciones.
+      </p>
+      <div class="row">
+        <div class="col-md-3 mb-4 benefit-block">
+          <i class="bi bi-bullseye benefit-icon"></i>
+          <h5 class="fw-bold mt-3 benefit-title">Misión</h5>
+          <p class="benefit-desc">Brindar una experiencia sencilla, segura y eficiente para encontrar propiedades.</p>
+        </div>
+        <div class="col-md-3 mb-4 benefit-block">
+          <i class="bi bi-eye benefit-icon"></i>
+          <h5 class="fw-bold mt-3 benefit-title">Visión</h5>
+          <p class="benefit-desc">Ser la plataforma líder en soluciones inmobiliarias digitales en Centroamérica.</p>
+        </div>
+        <div class="col-md-3 mb-4 benefit-block">
+          <i class="bi bi-heart-fill benefit-icon"></i>
+          <h5 class="fw-bold mt-3 benefit-title">Pasión</h5>
+          <p class="benefit-desc">Transformar cómo las personas encuentran su nuevo hogar con dedicación y amor.</p>
+        </div>
+        <div class="col-md-3 mb-4 benefit-block">
+          <i class="bi bi-stars benefit-icon"></i>
+          <h5 class="fw-bold mt-3 benefit-title">Valores</h5>
+          <p class="benefit-desc">Transparencia, innovación, empatía, confianza y compromiso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-5" style="background: linear-gradient(135deg, #e0f7fa, #ffffff);">
+    <div class="container text-center">
+      <h2 class="mb-4">Beneficios de Usar Nuestra Plataforma</h2>
+      <p class="lead mb-5">Confiabilidad, seguridad y la mejor opción para encontrar tu nuevo hogar</p>
+      <div class="row">
+        <div class="col-md-4 benefit-card">
           <i class="bi bi-house-fill benefit-icon"></i>
-          <h5>Variedad de Propiedades</h5>
-          <p>Encuentra casas, apartamentos y terrenos en las mejores ubicaciones del país.</p>
+          <h5 class="mt-3">Variedad de Propiedades</h5>
+          <p>Casas, apartamentos y terrenos en ubicaciones exclusivas.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 benefit-card">
           <i class="bi bi-shield-check benefit-icon"></i>
-          <h5>Seguridad Garantizada</h5>
-          <p>Realiza tus transacciones de compra o alquiler de forma segura y con total confianza.</p>
+          <h5 class="mt-3">Seguridad Garantizada</h5>
+          <p>Transacciones seguras y verificadas para tu tranquilidad.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 benefit-card">
           <i class="bi bi-chat-dots benefit-icon"></i>
-          <h5>Atención Personalizada</h5>
-          <p>Nos aseguramos de brindarte el mejor servicio para encontrar la propiedad que necesitas.</p>
+          <h5 class="mt-3">Atención Personalizada</h5>
+          <p>Un equipo dedicado para ayudarte en cada paso.</p>
         </div>
       </div>
     </div>
